@@ -17,8 +17,8 @@ int POWER = 0;  //Stores the value of the 433mhz remote.  0= off and 1= on.
 
 void setup(){ 
     Serial.begin(9600); //Begin Serial communication.
-    mySwitch.enableReceive(0);  // Receiver on inerrupt 0 => that is pin #2.  
-    pinMode(ledPin, OUTPUT); //Initilise LED Pin.
+    mySwitch.enableReceive(0);  // Receiver on interrupt 0 => that is pin #2.  
+    pinMode(ledPin, OUTPUT); //Initialize LED Pin.
     digitalWrite(ledPin, LOW); //Turns off 
     pinMode(5, INPUT); // Set input pins that check for a good signal.  This is wired to the top of channel 1 on the remote.
   }
@@ -43,6 +43,6 @@ void loop(){
     Serial.print("input pulse: "); 
     Serial.println(IN1); // // Print the values.
    }
-    if (IN1>1300) digitalWrite(13, HIGH); else digitalWrite(13, LOW);   // you might want to change this value based off of your remote.  at this threshold, if I push left on the right joystick, it trips the relays.  
+    if (IN1>1300) digitalWrite(13, HIGH); else digitalWrite(13, LOW);   // you might want to change this value based off of your remote.  At this threshold, if I push left on the right joystick, it trips the relays.  
  }
  
